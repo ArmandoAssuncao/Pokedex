@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" type="text/css" href="static/css/html5-reset.css">
+		<link rel="stylesheet" type="text/css" href="static/css/styles.css">
+		<title>ArmDex</title>
+	</head>
+
+	<body>
+		<main>
+			<div class="container-total">
+				<!--<div class="container-header">
+					<input type="text" id="search" placeholder="">
+					<button id="btn_search">Search</button>
+				</div>-->
+
+				<div id="roll-character" class="container-roll-character">
+					<div class="opacity_roll"></div>
+					<div class="selector_char"></div>
+					<div class="move_scroll_left"></div>
+					<div class="move_scroll_right"></div>
+					<div class="begin_scroll"></div>
+					<div class="final_scroll"></div>
+				</div>
+
+				<div class="container-pokedex">
+					<div class="elements-pokedex">
+						<div class="column-one">
+							<div class="character-characteristics">
+								<div>
+									<span id="egg_group" class="property">Egg group:</span>
+									<span id="attr_egg_group_value"></span>
+								</div>
+								<div>
+									<span id="weight" class="property">Weight:</span>
+									<span id="attr_weight_value"></span>
+								</div>
+								<div>
+									<span id="height" class="property">height:</span>
+									<span id="attr_height_value"></span>
+								</div>
+							</div>
+
+							<div class="character-description"></div>
+
+							<div class="character-others-sprites">
+								<p>Other Forms</p>
+								<div id="div_img_sprite_other">
+								</div>
+							</div>
+						</div>
+
+						<div class="column-two">
+							<div class="character-name">
+							</div>
+
+							<div class="character-sprite">
+								<div id="div_img_sprite">
+									<img id="img_character_sprite">
+								</div>
+							</div>
+
+							<div class="character-type">
+								<div>
+									<span class="property">Type:</span>
+									<span id="pokemon_type"></span>
+								</div>
+								<div>
+									<span class="property">Abilities:</span>
+									<span id="pokemon_abilities"></span>
+								</div>
+								<!--<div>
+									<span class="property">Strenghts:</span>
+									<span id="pokemon_strenghts">Fire / Bug / Ice</span>
+								</div>-->
+								<div>
+									<span class="property">Weaknesses:</span>
+									<span id="pokemon_weakness"></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="column-three">
+							<!--<div class="character-gender">
+								<p>Gender Ratio</p>
+								<p id="gender_ratio"></p>
+							</div>-->
+
+							<div class="character-attributes">
+								<div class="character-attributes-name">
+									<p class="property">Hp</p>
+									<p class="property">Attack</p>
+									<p class="property">Defense</p>
+									<p class="property">SP-Atk</p>
+									<p class="property">SP-Def</p>
+									<p class="property">Exp</p>
+									<p class="property">Happiness</p>
+									<p class="property">Speed</p>
+								</div>
+								<div class="character-attributes-values">
+									<div id="attr_hp">0</div>
+									<div id="attr_attack">0</div>
+									<div id="attr_defense">0</div>
+									<div id="attr_sp_atk">0</div>
+									<div id="attr_sp_def">0</div>
+									<div id="attr_exp">0</div>
+									<div id="attr_happiness">0</div>
+									<div id="attr_speed">0</div>
+								</div>
+							</div>
+
+							<div class="character-moves">
+								Moves
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<footer>
+					<div class="container-footer">
+						<span>Copyright 2015</span>
+					</div>
+				</footer>
+			</div>
+		</main>
+
+		<script type="text/javascript" src="static/js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="static/js/script.js"></script>
+	</body>
+</html>
