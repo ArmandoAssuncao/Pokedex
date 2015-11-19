@@ -1,0 +1,170 @@
+@import "variables";
+@import "fonts";
+
+*{
+	-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+body{
+	//height: 100vh;
+}
+
+
+.container-total{
+	//height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+	/*justify-content: space-between;
+	align-items: flex-end;
+	align-content: stretch;*/
+	background-color: lightblue;
+
+	& > *{
+		width: 100%;
+		flex: 1 1 auto;
+	}
+
+	.container-header{
+		align-self: flex-start;
+		height: $heightHeaderBar;
+		min-height: $heightHeaderBar;
+		max-height: $heightHeaderBar;
+		background-color: gray;
+	}
+
+	.container-roll-character{
+		align-self: stretch;
+		height: $heightContainerRoll;
+		min-height: $heightContainerRoll;
+		max-height: $heightContainerRoll;
+		background-color: lightgreen;
+	}
+
+	.container-pokedex{
+		min-height: 200px;
+		background-color: #666;
+		display: flex;
+		flex-flow: row wrap;
+
+		.elements-pokedex{ //APAGAR TALVEZ
+			//flex-grow: 1;
+			display: inline-flex;
+			flex-flow: column wrap;
+			background-color: #444;
+			height: 100vh;
+
+			& > * {
+				border: $BorderType $BorderSize;
+				border-radius: $BorderRadiusSize;
+
+				padding: 10px;
+				font-family: "Pokemon_GB";
+			}
+
+			.character-characteristics{
+				//flex-basis: calc(100% / 3);
+				width: calc(100% / 3);
+				height: 70px;
+			}
+
+			.character-name{
+				//flex-basis: calc(100% / 3);
+				width: calc(100% / 3);
+				font-size: 30px;
+				text-align: center;
+			}
+
+			.character-gender{
+				//flex-basis: calc(100% / 3);
+				width: calc(100% / 3);
+			}
+
+			.character-description{
+				//flex-basis: calc(100% / 3);
+				width: calc(100% / 3);
+				font-size: 15px;
+			}
+
+			.character-sprite{
+				height: 300px;
+				flex-basis: calc(100% / 3);
+				width: calc(100% / 3);
+				display: flex;
+				flex: row nowrap;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.character-moves{
+				flex-basis: calc(100% / 3);
+				width: calc(100% / 3);
+			}
+
+			.character-others-sprites{
+				flex-basis: calc(100% / 3);	
+				width: calc(100% / 3);
+			}
+
+			.character-abilitys{
+				flex-basis: calc(100% / 3);
+				width: calc(100% / 3);
+				p{
+					margin: 3px 10px 3px 0;
+				}
+			}
+
+			.character-attributes{
+				flex-basis: calc(100% / 3);
+				width: calc(100% / 3);
+				display: inline-flex;
+				justify-content: space-around;
+
+				background-color: green;////
+
+				.character-attributes-name{
+					font-size: 15px;
+					text-align: right;
+					display: flex;
+					flex-flow: column wrap;
+					justify-content: space-around;
+
+					p{
+						margin: 3px 10px 3px 0;
+					}
+				}
+
+				.character-attributes-values{
+					width: 400px;
+					display: flex;
+					flex-flow: column wrap;
+					justify-content: space-around;
+
+					div{
+						text-align: center;
+						background-color: lightgray;
+						border-radius: 3px;
+					}
+				}
+			}
+		}
+	}
+
+	footer{
+		align-self: flex-end;
+		height: $heightFooterBar;
+		min-height: $heightFooterBar;
+		max-height: $heightFooterBar;
+		background-color: gray;
+		/*display: fixed;
+		top: 0;*/
+
+		.container-footer{
+			height: inherit;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}

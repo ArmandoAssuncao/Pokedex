@@ -1,0 +1,282 @@
+@import "variables";
+@import "fonts";
+
+*{
+	-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+.container-total{
+	height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+	background-color: lightblue;
+	align-items: stretch;
+
+	& > *{
+		width: 100%;
+		flex: 1 1 auto;
+	}
+
+	.container-header{
+		align-self: flex-start;
+		height: $heightHeaderBar;
+		min-height: $heightHeaderBar;
+		max-height: $heightHeaderBar;
+		background-color: gray;
+	}
+
+	.container-roll-character{
+		align-self: stretch;
+		height: $heightContainerRoll;
+		min-height: $heightContainerRoll;
+		max-height: $heightContainerRoll;
+		background-color: $BackgroundColorBoxes;
+		display: inline-flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		position: static;
+
+		.opacity_roll{
+			flex: 1 1 auto;
+			min-width: 100%;
+			height: $heightContainerRoll;
+			float: right;
+			position: absolute;
+			background: -webkit-linear-gradient(left, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.9) 100%);
+			display: none;
+		}
+
+		.selector_char{
+			position: absolute;
+			left: calc(50% - 60px);
+			min-width: 120px;
+			margin-top: 25px;
+			height: $heightContainerRoll - 50px;
+			border: 1px solid white;
+			border-top: none;
+			border-bottom: none;
+			z-index: 1050;
+		}
+
+		.move_scroll_left, .move_scroll_right{
+			position: absolute;
+			margin-top: 45px;
+			opacity: 0.6;
+
+			&:hover{
+				opacity: 1;
+			}
+
+			//triangle
+			width: 0;
+			height: 0;
+			border-top: 30px solid transparent;
+			border-bottom: 30px solid transparent;
+		}
+
+		.move_scroll_left{
+			border-right: 30px solid red;
+			left: 1%;
+		}
+
+		.move_scroll_right{
+			border-left: 30px solid red;
+			right: 1%;
+		}
+
+		.begin_scroll{
+			min-width: calc(50% - 53px);
+			height: 100px;
+		}
+
+		.final_scroll{
+			min-width: calc(50% - 53px);
+			height: 100px;
+		}
+
+		overflow: hidden;
+
+		div > img{
+			width: 105px;
+		}
+	}
+
+	.container-pokedex{
+		display: flex;
+		flex-flow: row wrap;
+
+		.elements-pokedex{ //APAGAR TALVEZ
+			display: inline-flex;
+			flex-flow: row wrap;
+			flex-grow: 1;
+			color: $ColorText;
+
+			.property{
+				font-weight: 900;
+				color: #888;
+			}
+
+			.column-one, .column-two, .column-three{
+				flex: 1 1 auto;
+				width: calc(100% / 3);
+				display: inline-flex;
+				flex-flow: column wrap;
+				background-color: $BackgroundColorBack;
+
+
+				& > * {
+					border: $BorderType $BorderSize #777;
+					border-radius: $BorderRadiusSize;
+					box-shadow: 0px 1px 20px 1px rgba(255, 255, 255, 0.5) inset;
+					background-color: $BackgroundColorBoxes;
+
+					//margin: $margin;
+					padding: $padding;
+					font-size: 15px;
+					font-family: "Pokemon_GB";
+				}
+			}
+
+			.column-one{
+				.character-characteristics{
+					& > div{
+						margin-bottom: 10px;
+					}
+				}
+
+				.character-description{
+					flex: 1 1 auto;
+					height: 0; //because of scroll
+
+					font-size: 15px;
+					word-spacing: 2px;
+					line-height: 1.6;
+					//letter-spacing: -1px;
+					word-wrap: break-word;
+					overflow-x: auto;
+					font-family: Pokemon_GB;
+				}
+
+				.character-others-sprites{
+					flex: 1 1 auto;
+					height: 0; //because of scroll
+					overflow-x: auto;
+
+					#div_img_sprite_other{
+						text-align: center;
+
+						#img_character_sprite_other{
+							width: 100px;
+						}
+					}
+				}
+			}//column-one
+
+			.column-two{
+				min-width: 250px;
+
+				.character-name{
+					font-size: 30px;
+					text-align: center;
+				}
+
+				.character-sprite{
+					flex: 1 1 auto;
+
+					display: flex;
+					flex: row nowrap;
+					justify-content: center;
+					align-items: stretch;
+					padding: 0px;
+
+					#div_img_sprite{
+						flex-grow: 1;
+						border: outset 10px #777;
+						border-radius: 5px;
+						text-align: center;
+
+						display: flex;
+						justify-content: center;
+						align-items: center;
+
+						img{
+							width: 250px;
+						}
+					}
+				}
+
+				.character-type{
+					flex: 1 1 auto;
+					width: 100%;
+					height: 0;
+					overflow-y: auto;
+					min-height: 150px;
+					font-size: 15px;
+					
+					div{
+						margin-bottom: 10px;
+					}
+				}
+			}//column-two
+
+			.column-three{
+				.character-gender{
+				}
+
+				.character-attributes{
+					flex: 1 1 auto;
+					display: inline-flex;
+					justify-content: space-around;
+
+					.character-attributes-name{
+						font-size: 15px;
+						text-align: right;
+						display: flex;
+						flex-flow: column wrap;
+						justify-content: space-around;
+
+						p{
+							margin-right: 10px;
+						}
+					}
+
+					.character-attributes-values{
+						flex-grow: 1;
+						display: flex;
+						flex-flow: column wrap;
+						justify-content: space-around;
+
+						div{
+							text-align: center;
+							background-color: #303F9F;
+							border-radius: 3px;
+							padding: 3px 0;
+						}
+					}
+				}
+
+				.character-moves{
+					min-height: 150px;
+				}
+			}//column-three
+		}
+	}
+
+	footer{
+		align-self: flex-end;
+		height: $heightFooterBar;
+		min-height: $heightFooterBar;
+		max-height: $heightFooterBar;
+		background-color: gray;
+		display: none;
+
+		.container-footer{
+			height: inherit;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}
